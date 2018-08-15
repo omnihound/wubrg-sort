@@ -1,6 +1,6 @@
 module.exports = function(a,b) {
     let colorArray = ["white","blue","black","red","green"];
-    let indexOfA = colorArray.indexOf(a);
+    let indexOfA = colorArray.indexOf(a.toLowerCase());
 
     if (indexOfA > 0) {
         for (var i = 0; i < indexOfA; i++) {
@@ -8,11 +8,11 @@ module.exports = function(a,b) {
         }
     }
 
-    if (colorArray.indexOf(b) <= 2) {
+    if (colorArray.indexOf(b.toLowerCase()) <= 2) {
         return -1;
     }
 
-    if (colorArray.indexOf(b) >= 3) {
+    if (colorArray.indexOf(b.toLowerCase()) >= 3) {
         return 1;
     }
 

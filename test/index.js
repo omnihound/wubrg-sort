@@ -25,7 +25,7 @@ let mardu = optimiseSequence(['red','white','black']);
 let temur = optimiseSequence(['red','blue','green']);
 let abzan = optimiseSequence(['white','green','black']);
 let jeskai = optimiseSequence(['blue','white','red']);
-let sultai =optimiseSequence(['black','blue','green']);
+let sultai = optimiseSequence(['black','blue','green']);
 
 
 test('sort out of order wubrg sequence', function(t){
@@ -97,4 +97,20 @@ test('all guilds, shards and wedges will sort correctly in their implicit order'
     t.equal(JSON.stringify(testArray[17].colors), JSON.stringify(sultai));
     t.equal(JSON.stringify(testArray[18].colors), JSON.stringify(mardu));
     t.equal(JSON.stringify(testArray[19].colors), JSON.stringify(temur));
+});
+
+test('can understand titlecased/uppercase colours okay', function (t){
+    t.plan(3);
+
+    let testSequence1 = optimiseSequence(['Blue','WHITE']);
+    t.equal(JSON.stringify(testSequence1), JSON.stringify(['WHITE','Blue']));
+
+    let testSequence2 = optimiseSequence(['Black','bLUE','grEen']);
+
+    let testArray = [
+        {colors: testSequence1}, {colors: testSequence2}
+    ];
+
+    t.equal(JSON.stringify(testArray[0].colors), JSON.stringify(testSequence1));
+    t.equal(JSON.stringify(testArray[1].colors), JSON.stringify(testSequence2));
 });

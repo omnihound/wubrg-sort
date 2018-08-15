@@ -2,7 +2,7 @@ module.exports = function(colors) {
     let colorArray = ["white","blue","black","red","green"];
     let score = 0;
 
-    let indexOfA = colorArray.indexOf(colors[0]);
+    let indexOfA = colorArray.indexOf(colors[0].toLowerCase());
     if (indexOfA > 0) {
         for (let i = 0; i < indexOfA; i++) {
             colorArray.push(colorArray.shift());
@@ -11,7 +11,7 @@ module.exports = function(colors) {
     }
 
     score += colors.reduce((total, color) => {
-        let thisIndex = colorArray.indexOf(color);
+        let thisIndex = colorArray.indexOf(color.toLowerCase());
         let timesShifted = 0;
         if (thisIndex > 0) {
             for (var j = 0; j < thisIndex; j++) {

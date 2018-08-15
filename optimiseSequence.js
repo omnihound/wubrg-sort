@@ -13,13 +13,13 @@ module.exports = function(array) {
         var max = false;
         var min = false;
         for (let i = 0; i < colorArray.length; i++) {
-            if ([0,1,2].includes(colorArray.indexOf(array[0])) && [0,1,2].includes(colorArray.indexOf(array[1])) &&  [0,1,2].includes(colorArray.indexOf(array[2]))) {
+            if ([0,1,2].includes(colorArray.indexOf(array[0].toLowerCase())) && [0,1,2].includes(colorArray.indexOf(array[1].toLowerCase())) &&  [0,1,2].includes(colorArray.indexOf(array[2].toLowerCase()))) {
                 //if they are [0,1,2], break out of the loop, make it min
                 min = true;
                 break;
             }
             
-            if ([0,2,4].includes(colorArray.indexOf(array[0])) && [0,2,4].includes(colorArray.indexOf(array[1])) &&  [0,2,4].includes(colorArray.indexOf(array[2]))) {
+            if ([0,2,4].includes(colorArray.indexOf(array[0].toLowerCase())) && [0,2,4].includes(colorArray.indexOf(array[1].toLowerCase())) &&  [0,2,4].includes(colorArray.indexOf(array[2].toLowerCase()))) {
                 //if they are [0,2,4], break out of the loop, make it max
                 max = true;
                 break;
