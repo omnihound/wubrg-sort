@@ -13,6 +13,7 @@
     "url": "git+https://github.com/omnihound/wubrg-sort.git"
   },
   "devDependencies": {
-    "tape": "^4.9.1"
+    "tape": "^4.9.1",
+    "minimist": ">=1.2.3"
   }
 }
